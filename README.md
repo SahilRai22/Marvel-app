@@ -10,4 +10,4 @@ Fill in the `vars` with respective keys found on Marvel -> API -> APIKey.swift t
 
 ## Preview
 
-<video controls src="MarvelAppRecording.mp4" title="Title" width="400" height="800"></video>
+<video controls src="https://github.com/SahilRai22/marvel-app/blob/main/MarvelAppRecording.mp4" title="Title" width="400" height="800"></video>
