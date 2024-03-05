@@ -140,7 +140,6 @@
 		C88751292B8CF8B100383402 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C82EDBA92B964A050049EB1F /* StateMachine */,
 				C887512C2B8CF8DE00383402 /* MarvelComics */,
 				C887512B2B8CF8CB00383402 /* MarvelCharacters */,
 				C887512A2B8CF8C100383402 /* LoadingScreen */,
@@ -245,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				C858F2C42B8F49AF00ECEAEC /* Info.plist */,
+				C82EDBA92B964A050049EB1F /* StateMachine */,
 				C8C891782B90C1BF0083B9F7 /* API */,
 				C88751292B8CF8B100383402 /* Features */,
 				C8D131502B862EEE00282417 /* MarvelApp.swift */,

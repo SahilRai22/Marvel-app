@@ -12,8 +12,6 @@ class ComicViewModel: ObservableObject {
     @Published var comicData: [ComicData] = []
     @Published var state: StateMachine = .loading
     
-
-    
     var characterItems: [ComicsItem]
     private var loadData: Bool = false
     
