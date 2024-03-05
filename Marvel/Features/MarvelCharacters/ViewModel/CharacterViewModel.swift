@@ -12,29 +12,28 @@ import Combine
 @MainActor // anything that updates the UI needs to be run on main thread
 public class CharacterViewModel: ObservableObject {
     @Published var characterData: [CharacterData] = [CharacterData]()
+    @Published var state: StateMachine = .loading
     
     private let service: CharacterService
     
     
-    private var loadData: Bool = false
-    
     init(service: CharacterService) {
         self.service = service
-        
+        fetchCharacter()
+    }
+    
+    private func fetchCharacter(){
         Task.init {
-            self.loadData = true
-            
-            if self.loadData {
                 do {
+                    state = .loading
                     self.characterData = try await service.fetchMarvelCharacterData()
+                    state = .success
                     print("Api fetching successfully")
                 } catch {
+                    state = .error(error: error)
                     print(String(describing: error))
                 }
-            }
-            else {
-                print("CharacterViewModel loadData flag: \(loadData) - data not loading to view")
-            }
+
         }
 
     }
