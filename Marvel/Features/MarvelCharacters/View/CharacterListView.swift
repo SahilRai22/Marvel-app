@@ -17,16 +17,14 @@ struct CharacterListView: View {
             service: CharacterServiceImpl()
         ))
     }
-    //concatent the thumbnail
     
     var body: some View  {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 CardListHeaderView()
                     .frame(width: 500, height: 300)
-                
                 Spacer()
-                
+
                 switch characterViewModel.state {
                 case .success:
                     if characterViewModel.characterData.isEmpty {
@@ -61,16 +59,6 @@ struct CharacterListView: View {
             }
         }
     }
-    
-    func calculateHeaderHeight(with geometry: GeometryProxy) -> CGFloat {
-        let offset = geometry.frame(in: .global).minY
-        let height = geometry.size.height
-    
-        let headerHeight = height + offset
-    
-        return max(headerHeight, 0)
-    }
-    
 }
 
 struct CharacterView_Previews: PreviewProvider {

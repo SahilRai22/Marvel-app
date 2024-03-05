@@ -11,13 +11,7 @@ struct CharacterHeaderView: View {
     
     let result: Characters
     
-    func calculateHeaderHeight(with geometry: GeometryProxy) -> CGFloat {
-        let offset = geometry.frame(in: .global).minY
-        let height = geometry.size.height
-        let headerHeight = height + offset
-        
-        return max(headerHeight, 0)
-    }
+    let headerHelper = GeometricHeaderHelper()
     
     var body: some View {
         let characterThumbnailPathHTTP = "\(result.thumbnail.path).\(result.thumbnail.extension)"
@@ -28,7 +22,7 @@ struct CharacterHeaderView: View {
                       image
                           .resizable()
                           .aspectRatio(contentMode: .fill)
-                          .frame(width: geometry.size.width, height: calculateHeaderHeight(with: geometry))
+                          .frame(width: geometry.size.width, height: headerHelper.calculateHeaderHeight(with: geometry))
                           .clipped()
                           .offset(y: -geometry.frame(in: .global).minY)
                   } placeholder: {

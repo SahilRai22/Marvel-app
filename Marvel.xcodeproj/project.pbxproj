@@ -12,6 +12,8 @@
 		C82D7DA42B88E278005D719D /* CharacterDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82D7DA32B88E278005D719D /* CharacterDescriptionView.swift */; };
 		C82D7DA72B891305005D719D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82D7DA62B891305005D719D /* SplashView.swift */; };
 		C82EDBAB2B964A1D0049EB1F /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82EDBAA2B964A1D0049EB1F /* StateMachine.swift */; };
+		C82EDBAD2B9756C90049EB1F /* GeometricHeaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82EDBAC2B9756C90049EB1F /* GeometricHeaderHelper.swift */; };
+		C82EDBB22B9767A30049EB1F /* ComicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82EDBB12B9767A30049EB1F /* ComicListView.swift */; };
 		C88751262B8CAFDB00383402 /* CharacterService_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88751252B8CAFDB00383402 /* CharacterService_Test.swift */; };
 		C88751282B8CF79E00383402 /* ComicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88751272B8CF79E00383402 /* ComicCardView.swift */; };
 		C88751312B8CFA0600383402 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88751302B8CFA0600383402 /* Comic.swift */; };
@@ -63,6 +65,8 @@
 		C82D7DA32B88E278005D719D /* CharacterDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDescriptionView.swift; sourceTree = "<group>"; };
 		C82D7DA62B891305005D719D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C82EDBAA2B964A1D0049EB1F /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		C82EDBAC2B9756C90049EB1F /* GeometricHeaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometricHeaderHelper.swift; sourceTree = "<group>"; };
+		C82EDBB12B9767A30049EB1F /* ComicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListView.swift; sourceTree = "<group>"; };
 		C858F2C42B8F49AF00ECEAEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C887511C2B8CAF9100383402 /* MarvelAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88751252B8CAFDB00383402 /* CharacterService_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService_Test.swift; sourceTree = "<group>"; };
@@ -137,6 +141,14 @@
 			path = StateMachine;
 			sourceTree = "<group>";
 		};
+		C82EDBAE2B975A910049EB1F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C82EDBAC2B9756C90049EB1F /* GeometricHeaderHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C88751292B8CF8B100383402 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 		C887512B2B8CF8CB00383402 /* MarvelCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				C82EDBAE2B975A910049EB1F /* Helper */,
 				C88751342B8DFDB700383402 /* Service */,
 				C8D1317C2B862F7E00282417 /* Model */,
 				C8D1317B2B862F6200282417 /* ViewModel */,
@@ -197,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C88751272B8CF79E00383402 /* ComicCardView.swift */,
+				C82EDBB12B9767A30049EB1F /* ComicListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -479,10 +493,12 @@
 				C80D06282B8F8AEA00A81BEF /* ComicService.swift in Sources */,
 				C8D131532B862EEE00282417 /* CharacterListView.swift in Sources */,
 				C82D7DA42B88E278005D719D /* CharacterDescriptionView.swift in Sources */,
+				C82EDBB22B9767A30049EB1F /* ComicListView.swift in Sources */,
 				C8C8917F2B90D5C40083B9F7 /* APIHash.swift in Sources */,
 				C82D7DA22B88C540005D719D /* CharacterCardView.swift in Sources */,
 				C8C891772B90994C0083B9F7 /* CardListHeaderView.swift in Sources */,
 				C8D1317F2B862FA500282417 /* CharacterViewModel.swift in Sources */,
+				C82EDBAD2B9756C90049EB1F /* GeometricHeaderHelper.swift in Sources */,
 				C8D131512B862EEE00282417 /* MarvelApp.swift in Sources */,
 				C8D131812B862FC000282417 /* Character.swift in Sources */,
 				C88751332B8CFA4E00383402 /* ComicViewModel.swift in Sources */,

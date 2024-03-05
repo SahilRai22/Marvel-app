@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+extension Text {
+    func styling() -> some View {
+        self
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            .padding(5)
+    }
+}
+
 struct CharacterDescriptionView: View {
     let result: Characters
     
@@ -29,54 +38,26 @@ struct CharacterDescriptionView: View {
                 VStack(alignment: .leading) {
                     Text(result.name)
                         .font(.custom("Avenir", size: 20))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(5)
-                    
+                        .styling()
+    
                     Text("Character ID: \(result.id)")
-                        .font(.custom("Avenir", size: 10))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(5)
-                
+                        .font(.custom("Avenir", size: 12))
+                        .styling()
+
                     Text(result.description)
                         .font(.custom("Avenir", size: 12))
-                        .foregroundColor(Color.white)
-                        .padding(5)
-                    
+                        .styling()
+
                     Divider()
                     
                     Text("Comics")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(5)
-                    
-                }.padding(10)
+                        .font(.custom("Avenir", size: 14))
+                        .styling()
 
+                }.padding(10)
             }
-            switch comicViewModel.state {
-            case .success:
-                if comicViewModel.comicData.isEmpty{
-                    Text("Comic data is empty")
-                }
-                else {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            
-                            ForEach(comicViewModel.comicData, id: \.self) { comicData in
-                                ForEach(comicData.data.results, id: \.id) { comic in
-                                    ComicCardView(result: comic)
-                                }
-                            }
-                        }
-                    }
-    
-                }
-            case .loading:
-                ProgressView()
-            case .error(error: let error):
-                Text("Error: \(error.localizedDescription)")
-            }
+            
+            ComicListView(comicViewModel: comicViewModel)
         }
         .background(Color(red: 0.071, green: 0.071, blue: 0.071))
         .navigationBarTitleDisplayMode (.inline)
