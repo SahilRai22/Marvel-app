@@ -53,16 +53,29 @@ struct CharacterDescriptionView: View {
                     
                 }.padding(10)
 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        
-                        ForEach(comicViewModel.comicData, id: \.self) { comicData in
-                            ForEach(comicData.data.results, id: \.id) { comic in
-                                ComicCardView(result: comic)
+            }
+            switch comicViewModel.state {
+            case .success:
+                if comicViewModel.comicData.isEmpty{
+                    Text("Comic data is empty")
+                }
+                else {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            
+                            ForEach(comicViewModel.comicData, id: \.self) { comicData in
+                                ForEach(comicData.data.results, id: \.id) { comic in
+                                    ComicCardView(result: comic)
+                                }
                             }
                         }
                     }
+    
                 }
+            case .loading:
+                ProgressView()
+            case .error(error: let error):
+                Text("Error: \(error.localizedDescription)")
             }
         }
         .background(Color(red: 0.071, green: 0.071, blue: 0.071))

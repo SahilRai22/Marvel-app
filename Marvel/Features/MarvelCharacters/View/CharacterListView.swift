@@ -23,31 +23,42 @@ struct CharacterListView: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 CardListHeaderView()
-                .frame(width: 500, height: 300)
-
+                    .frame(width: 500, height: 300)
+                
                 Spacer()
                 
-                VStack(alignment: .leading, spacing: 2) {
-                    
-                    Text("Characters")
-                        .foregroundColor(.white)
-                        .font(.system(.body, design: .rounded))
-                                       .fontWeight(.heavy)
-                                       .padding(20)
-                    
-                    ForEach(characterViewModel.characterData, id: \.self) { characterData in
-                        ForEach(characterData.data.results, id: \.id) { result in
-                            NavigationLink(destination: CharacterDescriptionView(result: result)) {
-                                CharacterCardView(result: result).preferredColorScheme(.dark)
+                switch characterViewModel.state {
+                case .success:
+                    if characterViewModel.characterData.isEmpty {
+                        Text("No characters found")
+                    } else {
+                        VStack(alignment: .leading, spacing: 2) {
+                            
+                            Text("Characters")
+                                .foregroundColor(.white)
+                                .font(.system(.body, design: .rounded))
+                                .fontWeight(.heavy)
+                                .padding(20)
+                            
+                            ForEach(characterViewModel.characterData, id: \.self) { characterData in
+                                ForEach(characterData.data.results, id: \.id) { result in
+                                    NavigationLink(destination: CharacterDescriptionView(result: result)) {
+                                        CharacterCardView(result: result).preferredColorScheme(.dark)
+                                    }
+                                    .hoverEffect(.lift)
+                                }
                             }
-                            .hoverEffect(.lift)
                         }
+                        .background(Color(red: 0.071, green: 0.071, blue: 0.071))
+                        .navigationBarHidden(true)
+                        .edgesIgnoringSafeArea(.top)
                     }
+                case .loading:
+                    ProgressView()
+                case .error(error: let error):
+                    Text("Error: \(error.localizedDescription)")
                 }
             }
-            .background(Color(red: 0.071, green: 0.071, blue: 0.071))
-            .navigationBarHidden(true)
-            .edgesIgnoringSafeArea(.top)
         }
     }
     
