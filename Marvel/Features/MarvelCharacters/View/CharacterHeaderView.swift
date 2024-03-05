@@ -29,7 +29,6 @@ struct CharacterHeaderView: View {
                       ProgressView()
                   }
               }
-              
         }
     }
 }

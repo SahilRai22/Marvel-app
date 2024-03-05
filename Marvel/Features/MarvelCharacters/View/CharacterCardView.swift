@@ -28,7 +28,6 @@ struct CharacterCardView: View{
                 } placeholder: {
                     ProgressView()
                 }
-                
                 VStack(alignment: .leading) {
                     Text("\(result.name)")
                         .font(.custom("Avenir", size: 14))

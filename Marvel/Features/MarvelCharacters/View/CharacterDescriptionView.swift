@@ -25,8 +25,7 @@ struct CharacterDescriptionView: View {
         self.result = result
         self._comicViewModel = StateObject(wrappedValue: ComicViewModel(
             result: result,
-            service: ComicServiceImpl()
-        ))
+            service: ComicServiceImpl()))
     }
     
     var body: some View {
@@ -43,7 +42,7 @@ struct CharacterDescriptionView: View {
                     Text("Character ID: \(result.id)")
                         .font(.custom("Avenir", size: 12))
                         .styling()
-
+                    
                     Text(result.description)
                         .font(.custom("Avenir", size: 12))
                         .styling()
@@ -53,7 +52,6 @@ struct CharacterDescriptionView: View {
                     Text("Comics")
                         .font(.custom("Avenir", size: 14))
                         .styling()
-
                 }.padding(10)
             }
             

@@ -15,7 +15,6 @@ struct ComicData: Codable, Hashable {
 
 // MARK: - DataClass
 struct ComicResult: Codable,Hashable {
-//    let offset, limit, total, count: Int
     let results: [Comics]
 }
 
@@ -25,25 +24,10 @@ struct Comics: Codable, Hashable, Identifiable {
     let digitalID: Int?
     let title: String
     let issueNumber: Int
-    //let description: String?
     let thumbnail: ComicThumbnail
-
 }
 
 // MARK: - Thumbnail
 struct ComicThumbnail: Codable, Hashable {
     let path: String
     let `extension`: String
-    
-    
-//    let thumbnailExtension: ComicExtension
-//
-//    enum CodingKeys: String, CodingKey {
-//        case path
-//        case thumbnailExtension = "extension"
-//    }
-}
-
-//enum ComicExtension: String, Codable {
-//    case jpg = "jpg"
-//}

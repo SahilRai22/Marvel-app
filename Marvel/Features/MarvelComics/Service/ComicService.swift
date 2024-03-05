@@ -30,4 +30,3 @@ class ComicServiceImpl: ComicService {
     return []
     }
 }
-

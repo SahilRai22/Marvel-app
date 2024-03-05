@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 @MainActor // anything that updates the UI needs to be run on main thread
 public class CharacterViewModel: ObservableObject {
     @Published var characterData: [CharacterData] = [CharacterData]()
@@ -33,8 +32,6 @@ public class CharacterViewModel: ObservableObject {
                     state = .error(error: error)
                     print(String(describing: error))
                 }
-
         }
-
     }
 }

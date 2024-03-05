@@ -21,8 +21,6 @@ struct ComicCardView: View {
                     image in image
                         .resizable()
                         .scaledToFit()
-                    
-                    
                 } placeholder: {
                     ProgressView()
                 }
@@ -42,9 +40,6 @@ struct ComicCardView: View {
                     }
                 }
                 .padding()
-                
-            
-                 
             }
             .padding(10)
      

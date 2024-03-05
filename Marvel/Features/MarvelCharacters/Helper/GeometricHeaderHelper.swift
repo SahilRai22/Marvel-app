@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 class GeometricHeaderHelper {
     func calculateHeaderHeight(with geometry: GeometryProxy) -> CGFloat {
         let offset = geometry.frame(in: .global).minY
