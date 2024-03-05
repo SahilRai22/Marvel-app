@@ -31,3 +31,4 @@ struct Comics: Codable, Hashable, Identifiable {
 struct ComicThumbnail: Codable, Hashable {
     let path: String
     let `extension`: String
+}

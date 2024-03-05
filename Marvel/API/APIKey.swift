@@ -9,11 +9,11 @@ import Foundation
 
 struct APIKey {
     public static var privateKey: String {
-          return ""
+          return "PRIVATE_KEY"
       }
     
     public static var publicKey: String {
-          return ""
+          return "PUBLIC_KEY"
       }
     
     public static var timeStamp: String {
