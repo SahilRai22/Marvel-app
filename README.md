@@ -2,7 +2,7 @@
 
 ## Setting up
 
-Sign up to get a to get API tokens from https://developer.marvel.com/
+Sign up to get API tokens from https://developer.marvel.com/
 
 You will be given a `privateKey` and a `publicKey`.
 
